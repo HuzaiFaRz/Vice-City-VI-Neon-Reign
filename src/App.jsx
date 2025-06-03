@@ -5,6 +5,7 @@ import Hero_Images from "./Components/Hero_Images";
 import Navbar from "./Components/Navbar";
 import VIBackground from "./assets/Images/Background.png";
 import Hero_BottomBar from "./Components/Hero_BottomBar";
+import Hero_Heading from "./Components/Hero_Heading";
 
 const App = () => {
   const [loadingVIShow, setLoadingVIShow] = useState(true);
@@ -37,13 +38,13 @@ const App = () => {
 
   return (
     <Fragment>
-      <main className="w-full h-screen overflow-hidden flex justify-center items-center bg-[#000]">
-        {loadingVIShow ? (
-          <>
+      {loadingVIShow ? (
+        <>
+          <div className="Loading-Page w-full h-[100svh] flex justify-center bg-black">
             <svg
               viewBox="0 0 800 600"
               preserveAspectRatio="xMidYMid slice"
-              className="VI_svg"
+              className="VI_svg overflow-hidden"
             >
               <defs>
                 <mask id="VIMask">
@@ -67,15 +68,19 @@ const App = () => {
                 mask="url(#VIMask)"
               />
             </svg>
-          </>
-        ) : (
-          <>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="Page-1 w-full h-[100svh] relative">
             <Navbar />
             <Hero_Images />
+            <Hero_Heading />
             <Hero_BottomBar />
-          </>
-        )}
-      </main>
+          </div>
+          <div className="Page-2 w-full h-[100svh] bg-red-300"></div>
+        </>
+      )}
     </Fragment>
   );
 };
