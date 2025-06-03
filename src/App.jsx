@@ -72,7 +72,7 @@ const App = () => {
         </>
       ) : (
         <>
-          <div className="Page-1 w-full h-[100svh] relative">
+          <div className="Page-1 w-full h-[100svh] relative overflow-hidden">
             <Navbar />
             <Hero_Images />
             <Hero_Heading />
