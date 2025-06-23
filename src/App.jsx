@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import VIBackground from "./assets/Images/Background.png";
 import Hero_BottomBar from "./Components/Hero_BottomBar";
 import Hero_Heading from "./Components/Hero_Heading";
+import HeroLogo from "./Components/HeroLogo";
 
 const App = () => {
   const [loadingVIShow, setLoadingVIShow] = useState(true);
@@ -77,6 +78,7 @@ const App = () => {
             <Hero_Images />
             <Hero_Heading />
             <Hero_BottomBar />
+            <HeroLogo />
           </div>
           <div className="Page-2 w-full h-[100svh] bg-red-300"></div>
         </>
