@@ -1,8 +1,6 @@
 import React from "react";
 import LogoImage from "../assets/Images/Hero_Logo.png";
 
-console.log(LogoImage);
-
 const HeroLogo = () => {
   return (
     <img

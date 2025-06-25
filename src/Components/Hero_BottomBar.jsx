@@ -11,7 +11,7 @@ const Hero_BottomBar = () => {
       <img
         src={heroBottomBarLogo}
         alt="Logo"
-        className="w-[200px] sm:w-[250px] object-cover"
+        className="w-[180px] sm:w-[250px] object-cover"
       />
       <div></div>
     </div>
