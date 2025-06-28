@@ -94,7 +94,7 @@ const App = () => {
           } flex-col justify-center items-center`}
           ref={mainRef}
         >
-          <div className="Page-1 w-full h-[100svh] relative overflow-hidden -rotate-10 scale-[1.7] ">
+          <div className="Page-1 w-full h-[100svh] relative overflow-hidden -rotate-10 scale-[1.7]">
             <Navbar />
             <Hero_Images />
             <Hero_Heading />

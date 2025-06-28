@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const Hero_Heading = () => {
   return (
     <Fragment>
-      <div className="w-full z-30 absolute top-1/5 -translate-y-1/5 text-white flex flex-col justify-center items-center gap-0">
+      <div className="w-full z-10 absolute top-1/5 -translate-y-1/5 text-white flex flex-col justify-center items-center gap-0">
         {["GRAND", "THEFT", "AUTO"].map((text, index) => {
           return (
             <React.Fragment key={index}>
