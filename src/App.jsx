@@ -1,18 +1,23 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Hero_Images from "./Components/Hero_Images";
 import Navbar from "./Components/Navbar";
 import VIBackground from "./assets/Images/Background.png";
+import PageTwoImage from "./assets/Images/Page-2-Image.png";
 import Hero_BottomBar from "./Components/Hero_BottomBar";
 import Hero_Heading from "./Components/Hero_Heading";
 import HeroLogo from "./Components/HeroLogo";
 import LocomotiveScroll from "locomotive-scroll";
 
 const App = () => {
-  const locomotiveScroll = new LocomotiveScroll();
+  new LocomotiveScroll();
   const [loadingVIShow, setLoadingVIShow] = useState(true);
   const mainRef = useRef(null);
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
 
   useGSAP(() => {
     const gsapTimeLine = gsap.timeline();
@@ -22,6 +27,10 @@ const App = () => {
       duration: 3,
       delay: 1,
       ease: "Expo.easeInOut",
+      overflow: "hidden",
+      onComplete: () => {
+        document.body.style.overflowY = "scroll";
+      },
     });
 
     if (loadingVIShow) {
@@ -53,7 +62,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <main className="overflow-hidden">
+      <main className="overflow-hidden main">
         <div
           className={`Loading-Page w-full h-[100svh] ${
             loadingVIShow ? "flex" : "hidden"
@@ -91,17 +100,48 @@ const App = () => {
         <div
           className={`${
             loadingVIShow ? "hidden" : "flex"
-          } flex-col justify-center items-center`}
+          } flex-col justify-center items-center w-full h-full`}
           ref={mainRef}
         >
-          <div className="Page-1 w-full h-[100svh] relative overflow-hidden -rotate-10 scale-[1.7]">
+          <div className="Page-1 w-full h-[100svh] relative overflow-hidden -rotate-10 scale-[1.7] flex flex-col items-center justify-center">
             <Navbar />
             <Hero_Images />
             <Hero_Heading />
             <Hero_BottomBar />
             <HeroLogo />
           </div>
-          <div className="Page-2 w-full h-[100svh] bg-red-300"></div>
+          <div className="Page-2 w-full h-full bg-black flex flex-col lg:flex-row justify-center items-center">
+            <img
+              src={PageTwoImage}
+              className="object-center object-cover w-max lg:w-[550px] xl:w-max"
+            />
+
+            <div className="text-white flex flex-col justify-center mb-20 w-full md:w-[600px] px-4">
+              <div className="text-6xl lg:text-7xl xl:text-8xl mt-10">
+                <h1>STILL RUNNING</h1>
+                <h1>NOT HUNTING</h1>
+              </div>
+              <div className="text-white text-[14px] sm:text-[18px] font-sans mt-10 h-full">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati incidunt suscipit iure tempora. Esse quis a option.
+                </p>
+                <p className="mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati incidunt suscipit iure tempora. Esse quis a optio
+                  quaerat nihil eveniet quae impedit dolores unde obcaecati?
+                </p>
+                <p className="mt-10">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati incidunt suscipit iure tempora. Esse quis a optio
+                  quaerat nihil eveniet quae impedit dolores unde obcaecati?
+                </p>
+              </div>
+              <button className="bg-yellow-400 text-black py-4 text-2xl cursor-pointer mt-10 w-full">
+                DOWNLOAD NOW
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </Fragment>
