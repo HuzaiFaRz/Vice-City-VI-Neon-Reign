@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef } from "react";
 import mainImage from "../assets/Images/Background.png";
 import cloudyImage from "../assets/Images/Cloudy_Sky.png";
-import heroGirlImage from "../assets/Images/Hero_boy.png";
+import heroGirlImage from "../assets/Images/Hero_Boy.png";
 import gsap from "gsap";
 
 const Hero_Images = () => {
