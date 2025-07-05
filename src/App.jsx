@@ -111,13 +111,15 @@ const App = () => {
             <HeroLogo />
           </div>
           <div className="Page-2 w-full h-full bg-black flex flex-col lg:flex-row justify-center items-center">
-            <img
-              src={PageTwoImage}
-              className="object-center object-cover w-max lg:w-[550px] xl:w-max"
-            />
+            <div>
+              <img
+                src={PageTwoImage}
+                className="object-center object-cover w-max"
+              />
+            </div>
 
             <div className="text-white flex flex-col justify-center mb-20 w-full md:w-[600px] px-4">
-              <div className="text-6xl lg:text-7xl xl:text-8xl mt-10">
+              <div className="text-6xl lg:text-7xl xl:text-8xl">
                 <h1>STILL RUNNING</h1>
                 <h1>NOT HUNTING</h1>
               </div>

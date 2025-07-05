@@ -1,8 +1,66 @@
 import React, { Fragment, useState } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 
 const Navbar = () => {
   const [menuButton, setMenubutton] = useState(false);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    const offcanvasLink = document.querySelectorAll("#offcanvas-link");
+
+    if (offcanvasLink) {
+      Array.from(offcanvasLink).forEach((elem) => {
+        elem.addEventListener("mousemove", () => {
+          const xCoordinate = (event.clientX / window.innerWidth - 0.5) * 40;
+          gsap.to(elem, {
+            x: `${xCoordinate * 2}%`,
+            scale: 1.3,
+            color: "white",
+            onComplete: () => {
+              elem.style.color = "black";
+              elem.style.transition = "all 0.1s linear";
+            },
+          });
+        });
+      });
+    }
+
+    if (menuButton) {
+      tl.play();
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+      gsap.to("#offcanvas", {
+        left: "0%",
+        delay: 0.2,
+        ease: "expo.out",
+        duration: 0.3,
+        onComplete: () => {
+          document.body.style.overflow = "hidden";
+        },
+      });
+      tl.from("#offcanvas-link", {
+        x: 100,
+        duration: 0.7,
+        stagger: 0.28,
+        opacity: 0,
+      });
+    } else {
+      tl.reverse();
+      gsap.to("#offcanvas", {
+        left: "-100%",
+        duration: 0.3,
+        ease: "power1.in",
+        onComplete: () => {
+          document.documentElement.style.overflow = "";
+          document.body.style.overflow = "";
+        },
+      });
+    }
+  }, [menuButton]);
 
   return (
     <Fragment>
@@ -37,9 +95,32 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="fixed top-0 left-0 w-full h-full z-[100] bg-black hidden flex-row items-center justify-center">
-        <div className="w-[50%] h-full bg-red-500"></div>
-        <div className="w-[50%] h-full skew-x-5 bg-blue-500"></div>
+      <div
+        className="fixed top-0 w-[100%] h-full z-50 bg-black/55 backdrop-blur-xl -left-full flex justify-center items-center"
+        id="offcanvas"
+      >
+        <div className="links flex flex-col justify-center items-start gap-6 uppercase h-full px-4">
+          {[
+            "Trailer",
+            "Release Date",
+            " Pre-Order ",
+            "Map & Locations",
+            "Community",
+          ].map((link, index) => {
+            const ml = `${index}0`;
+            return (
+              <React.Fragment key={index}>
+                <a
+                  href="#"
+                  className={`text-6xl xl:text-7xl text-black underline font-extralight ml-${ml} `}
+                  id="offcanvas-link"
+                >
+                  {link}
+                </a>
+              </React.Fragment>
+            );
+          })}
+        </div>
       </div>
     </Fragment>
   );

@@ -4,7 +4,7 @@ import LocomotiveScroll from "locomotive-scroll";
 
 const Hero_BottomBar = () => {
   return (
-    <div className="w-full h-[80px] flex justify-between items-center absolute bottom-0 pb-4 z-50 px-2 sm:px-6 bg-gradient-to-t from-black to-transparent">
+    <div className="w-full h-[80px] flex justify-between items-center absolute bottom-0 pb-4 z-20 px-2 sm:px-6 bg-gradient-to-t from-black to-transparent">
       <button
         className="flex justify-center items-center gap-1 text-white cursor-pointer"
         onClick={() => {
