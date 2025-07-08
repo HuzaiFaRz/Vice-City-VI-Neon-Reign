@@ -9,12 +9,13 @@ import Hero_BottomBar from "./Components/Hero_BottomBar";
 import Hero_Heading from "./Components/Hero_Heading";
 import HeroLogo from "./Components/HeroLogo";
 import LocomotiveScroll from "locomotive-scroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const App = () => {
   new LocomotiveScroll();
   const [loadingVIShow, setLoadingVIShow] = useState(true);
   const mainRef = useRef(null);
-
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     document.body.style.overflow = "hidden";
   }, []);
@@ -30,6 +31,39 @@ const App = () => {
       overflow: "hidden",
       onComplete: () => {
         document.body.style.overflowY = "scroll";
+      },
+    });
+
+    gsapTimeLine.from(".image-div", {
+      opacity: 0,
+      x: "-30%",
+      filter: "blur(5px)",
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".Page-2",
+        start: "top top",
+        end: "+=100%",
+        scrub: 1.5,
+        markers: false,
+        anticipatePin: 1,
+      },
+    });
+
+    gsapTimeLine.from(".page-2-content", {
+      opacity: 0,
+      x: "30%",
+      y: "20px",
+      duration: 1.5,
+      ease: "back.out(1.2)",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".Page-2",
+        start: "top top",
+        end: "+=100%",
+        scrub: 1.5,
+        markers: false,
+        anticipatePin: 1,
       },
     });
 
@@ -110,15 +144,14 @@ const App = () => {
             <Hero_BottomBar />
             <HeroLogo />
           </div>
-          <div className="Page-2 w-full h-full bg-black flex flex-col lg:flex-row justify-center items-center">
-            <div>
+          <div className="Page-2 w-full h-[100svh] min-h-max bg-black flex flex-col lg:flex-row justify-center items-center relative">
+            <div className="image-div">
               <img
                 src={PageTwoImage}
-                className="object-center object-cover w-max"
+                className="object-center object-cover w-max h-[700px]"
               />
             </div>
-
-            <div className="text-white flex flex-col justify-center mb-20 w-full md:w-[600px] px-4">
+            <div className="text-white flex flex-col justify-center xl:mb-0 mb-10 w-full md:w-[600px] px-4 page-2-content">
               <div className="text-6xl lg:text-7xl xl:text-8xl">
                 <h1>STILL RUNNING</h1>
                 <h1>NOT HUNTING</h1>
