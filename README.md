@@ -6,24 +6,27 @@ Live demo hosted on **Netlify**.
 ---
 
 ## 🌐 Live Demo
+
 [https://huzaifavicecityvineonreign.netlify.app/](https://huzaifavicecityvineonreign.netlify.app/)
 
 ---
 
 ## ✨ Features
-- ⚡ Built with **React 18** and **Vite** for blazing-fast performance
-- 🎨 Styled with **modern CSS / TailwindCSS** (if applicable)
+
+- ⚡ Built with **React** and **Vite** for blazing-fast performance
+- 🎨 Styled with **modern CSS / TailwindCSS**
 - 📱 Fully responsive design for mobile, tablet, and desktop
-- 🔄 Hot Module Replacement (HMR) for instant updates during development
 - 🎭 Thematic visual design inspired by Vice City aesthetics
 
 ---
 
 ## 🛠 Tech Stack
+
 - **React** – UI library
 - **Vite** – Frontend tooling & dev server
 - **JavaScript (ES6+)**
-- **CSS / TailwindCSS** (if used)
+- **CSS / TailwindCSS**
+- **Animation / GSAP**
 - **Netlify** – Deployment & hosting
 
 ---
@@ -32,13 +35,14 @@ Live demo hosted on **Netlify**.
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/<your-repo-name>.git
+git clone https://github.com/<HuzaiFaRz>/<Vice-City-VI-Neon-Reign>.git
 
 # Navigate into the project folder
-cd <your-repo-name>
+cd <Vice-City-VI-Neon-Reign>
 
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
+```
