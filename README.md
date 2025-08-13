@@ -1,7 +1,7 @@
 # Vice City Vine on Reign
 
-A modern React + Vite web application showcasing a stylish, interactive UI inspired by the aesthetic of Vice City.  
-Live demo hosted on **Netlify**.
+A cinematic, scroll-animated landing page built with **React**, **Vite**, **GSAP**, and **Locomotive Scroll**.  
+The site features a dramatic animated loading screen, smooth scrolling, and scroll-triggered transitions inspired by the Vice City aesthetic.
 
 ---
 
@@ -13,21 +13,23 @@ Live demo hosted on **Netlify**.
 
 ## ✨ Features
 
-- ⚡ Built with **React** and **Vite** for blazing-fast performance
-- 🎨 Styled with **modern CSS / TailwindCSS**
-- 📱 Fully responsive design for mobile, tablet, and desktop
-- 🎭 Thematic visual design inspired by Vice City aesthetics
+- 🎭 **Animated Loading Screen** – SVG mask reveal of the "VI" logo
+- ⚡ **Smooth Scrolling** with Locomotive Scroll
+- 🎯 **Scroll-triggered animations** powered by GSAP & ScrollTrigger
+- 🖼 **Responsive hero section** with images, headings, and bottom bar
+- 📱 **Mobile-friendly** layout
+- 🎨 Inspired by Vice City’s bold, vibrant visual style
 
 ---
 
 ## 🛠 Tech Stack
 
-- **React** – UI library
-- **Vite** – Frontend tooling & dev server
-- **JavaScript (ES6+)**
-- **CSS / TailwindCSS**
-- **Animation / GSAP**
-- **Netlify** – Deployment & hosting
+- **React 18**
+- **Vite**
+- **GSAP & ScrollTrigger**
+- **Locomotive Scroll**
+- **Tailwind CSS** (for utility-first styling)
+- **Netlify** (deployment)
 
 ---
 
