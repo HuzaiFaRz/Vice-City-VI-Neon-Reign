@@ -35,10 +35,10 @@ Live demo hosted on **Netlify**.
 
 ```bash
 # Clone the repository
-git clone https://github.com/<HuzaiFaRz>/<Vice-City-VI-Neon-Reign>.git
+git clone https://github.com/HuzaiFaRz/Vice-City-VI-Neon-Reign.git
 
 # Navigate into the project folder
-cd <Vice-City-VI-Neon-Reign>
+cd Vice-City-VI-Neon-Reign
 
 # Install dependencies
 npm install
