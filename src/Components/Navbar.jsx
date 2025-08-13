@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 
