@@ -13,6 +13,7 @@ body {
   font-family: PriceDown;
 }
 
-button,a{
+button,
+a {
   outline: none !important;
 }

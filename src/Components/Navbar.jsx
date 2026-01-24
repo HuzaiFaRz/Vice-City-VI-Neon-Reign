@@ -36,7 +36,7 @@ const Navbar = () => {
       tl.from("#offcanvas-link", {
         y: 100,
         duration: 0.7,
-        stagger: 0.28,
+        stagger: 0.2,
         opacity: 0,
       });
     } else {
@@ -79,9 +79,7 @@ const Navbar = () => {
               );
             })}
           </button>
-          <div className="logo text-white text-2xl self-center">
-            RockStar
-          </div>
+          <div className="logo text-white text-2xl self-center">RockStar</div>
         </div>
       </nav>
 
@@ -100,7 +98,7 @@ const Navbar = () => {
             return (
               <React.Fragment key={index}>
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className={`text-4xl md:text-5xl sm:text-7xl xl:text-8xl text-white font-extralight`}
                   id="offcanvas-link"
                 >
