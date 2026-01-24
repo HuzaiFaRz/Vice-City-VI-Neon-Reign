@@ -54,10 +54,10 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <nav className="w-full px-4 py-1 h-[80px] absolute top-0 left-0 z-1000 flex flex-wrap justify-between items-center">
-        <div className="Nav-Start flex flex-row justify-center items-center gap-5 h-full ml-3 md:ml-12 mt-2 md:mt-4">
+      <nav className="w-full px-4 py-1 h-[60px] absolute top-0 left-0 z-1000 flex flex-wrap justify-between items-center">
+        <div className="Nav-Start flex flex-row justify-center items-center gap-5 h-full ml-3 md:ml-12 mt-1 md:mt-3">
           <button
-            className="flex flex-col justify-center items-start gap-2 cursor-pointer transition-all w-[60px] h-[40px]"
+            className="flex flex-col justify-center items-start gap-2 cursor-pointer transition-all w-[60px] h-[40px] scale-65 sm:scale-100 mt-5"
             onClick={() => setMenubutton(!menuButton)}
           >
             {[0, 1, 2].map((_, index) => {
@@ -68,18 +68,18 @@ const Navbar = () => {
                       index < 1
                         ? `w-[55px] ${menuButton && "rotate-45"} `
                         : index < 2
-                        ? `w-[35px] ${menuButton && "hidden"}`
-                        : index < 3 &&
-                          `w-[22px]  ${
-                            menuButton && "w-[55px] -rotate-45 -mt-3"
-                          }`
+                          ? `w-[35px] ${menuButton && "hidden"}`
+                          : index < 3 &&
+                            `w-[22px]  ${
+                              menuButton && "w-[55px] -rotate-45 -mt-3"
+                            }`
                     } h-[6px] bg-white`}
                   ></span>
                 </React.Fragment>
               );
             })}
           </button>
-          <div className="logo text-white text-2xl self-start mt-[7px]">
+          <div className="logo text-white text-2xl self-center">
             RockStar
           </div>
         </div>
@@ -89,7 +89,7 @@ const Navbar = () => {
         className="fixed top-0 w-[100%] h-full z-50 bg-black/55 backdrop-blur-xl -left-full flex justify-center items-center"
         id="offcanvas"
       >
-        <div className="links flex flex-col justify-evenly items-center uppercase w-full h-full px-1">
+        <div className="links flex flex-col justify-center gap-10 sm:gap-0 sm:justify-evenly items-center uppercase w-full h-full px-1">
           {[
             "Trailer",
             "Release Date",
@@ -101,7 +101,7 @@ const Navbar = () => {
               <React.Fragment key={index}>
                 <a
                   href="#"
-                  className={`text-6xl sm:text-7xl xl:text-8xl text-white font-extralight`}
+                  className={`text-4xl md:text-5xl sm:text-7xl xl:text-8xl text-white font-extralight`}
                   id="offcanvas-link"
                 >
                   {link}

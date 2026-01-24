@@ -12,3 +12,7 @@ body {
   height: 100%;
   font-family: PriceDown;
 }
+
+button,a{
+  outline: none !important;
+}
