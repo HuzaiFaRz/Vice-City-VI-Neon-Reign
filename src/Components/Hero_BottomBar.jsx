@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import heroBottomBarLogo from "../assets/Images/Hero_BottomBar_Logo.png";
 import LocomotiveScroll from "locomotive-scroll";
 
